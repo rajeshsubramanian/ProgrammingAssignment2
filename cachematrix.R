@@ -1,5 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These functions calculate the inverse of a given matrix.
+## Results are cached for performance.
+## To use:
+##  a <- makeCacheMatrix(matrix(1:4,2,2))
+##  a_inv <- cacheSolve(a)
+##  a$get() %*% a should be and identity matrix
+##  Running a_inv <- cacheSolve(a) again should fetch the cached data
 
 ## Creates a custom Matrix with get and set methods
 makeCacheMatrix <- function(x = matrix()) {
@@ -20,15 +25,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Solves to find the inverse of a matrix.
 ## Checks to see if the inverse is cached and returns it if it is
 ## Calculates the inverse and caches it if it isn't cached
-<<<<<<< HEAD
-## To use:
-##  a <- makeCacheMatrix(matrix(1:4,2,2))
-##  a_inv <- cacheSolve(a)
-##  a$get() %*% a should be and identity matrix
-##  Running a_inv <- cacheSolve(a) again should fetch the cached data
 
-=======
->>>>>>> c2944bd57ab26be6107f032a8d3b5b1ecce1fc78
 cacheSolve <- function(x = matrix(), ...) {
   ## Return a matrix that is the inverse of 'x'
   m <- x$getmatrix()
